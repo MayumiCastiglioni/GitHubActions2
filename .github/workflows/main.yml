@@ -9,8 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Instalar Docker
-        run: sudo apt-get update && sudo apt-get install -y docker.io
+      # Remove a instalação do Docker
       - name: Validar HTML com vnu
         run: docker run --rm -v ${{ github.workspace }}:/workspace ghcr.io/validator/validator:latest vnu --skip-non-html /workspace
 
